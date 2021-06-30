@@ -66,6 +66,32 @@
         </div>
     </section>
     <!-- End of Quiz Game Section -->
+    <!-- Start of Finish Quiz Section Modal -->
+    <section id="finish-quiz-section">
+        <div class="modal fade" id="finish-quiz-modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Congratulations!</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>You have reached the end of the quiz game.</p>
+                        <h4>Total Score:</h4>
+                        <h3 id="final-score">0</h3>
+                        <form>
+                            <p>Enter your name to save the score:</p>
+                            <input type="text" name="username" id="username" placeholder="Enter your name"> 
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn" id="save-score">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Finish Quiz Section Modal -->
     <!-- Start of Rules Section Modal -->
     <section id="rules-section">
         <div class="modal fade" id="rules-modal" tabindex="-1" aria-hidden="true">
@@ -150,7 +176,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn">Submit Feedback</button>
+                        <button type="submit" class="btn">Send Message</button>
                     </div>
                 </div>
             </div>
