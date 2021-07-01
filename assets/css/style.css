@@ -64,3 +64,23 @@ body {
     letter-spacing: 2px;
     font-size: 25px;
 }
+
+/* Modal Content Styles */
+
+.modal-content {
+    background-color: #ec7b6f;
+}
+
+h2 {
+    font-family: "Luckiest Guy", sans-serif;
+    font-size: 2.25rem;
+    letter-spacing: 2px;
+    padding-top: 8px;
+}
+
+h4 {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
