@@ -1,0 +1,30 @@
+/* Fonts Imported from Google Fonts */
+
+/* Luckiest Guy Font for Headings */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+/* Open Sans Font for Main Text */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+/* General Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: url("../images/bg-image-2.jpeg");
+}
+
+.hide {
+    display: none;
+}
