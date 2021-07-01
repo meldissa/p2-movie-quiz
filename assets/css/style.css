@@ -22,7 +22,20 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: url("../images/bg-image-2.jpeg") center center;
+    background: url("../images/bg-image.jpeg") center center no-repeat;
+    background-size: cover;
+}
+
+.btn {
+    background-color: #c20047;
+    border: none;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #ffbb59;
+    border: none;
+    color: black;
 }
 
 .hide {
@@ -32,12 +45,12 @@ body {
 /* Home Section Styles */
 
 #home-section {
-    background-color: #ec7b6f;
+    background-color: black;
     border-radius: 25px;
     width: 600px;
     max-width: 80%;
     padding: 25px;
-    box-shadow: 0 0 5px 5px rgb(243, 170, 170);
+    border: 1px solid #fff;
 }
 
 #heading {
@@ -68,7 +81,13 @@ body {
 /* Modal Content Styles */
 
 .modal-content {
-    background-color: #ec7b6f;
+    background-color: black;
+    border: 1px solid #fff;
+}
+
+.modal-footer .btn {
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 h2 {
