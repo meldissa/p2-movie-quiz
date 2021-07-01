@@ -22,9 +22,45 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: url("../images/bg-image-2.jpeg");
+    background: url("../images/bg-image-2.jpeg") center center;
 }
 
 .hide {
     display: none;
+}
+
+/* Home Section Styles */
+
+#home-section {
+    background-color: #ec7b6f;
+    border-radius: 25px;
+    width: 600px;
+    max-width: 80%;
+    padding: 25px;
+    box-shadow: 0 0 5px 5px rgb(243, 170, 170);
+}
+
+#heading {
+    font-family: "Luckiest Guy", sans-serif;
+    text-align: center;
+    font-size: 3.25rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+#home-section p {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-block {
+    width: 100%;
+    margin: 10px 0;
+    font-family: "Luckiest Guy", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 25px;
 }
