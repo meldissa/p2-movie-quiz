@@ -132,3 +132,12 @@ h3, h4 {
     letter-spacing: 2px;
     font-size: 25px;
 }
+
+/* Highscores Section Modal */
+
+.table th {
+    font-family: "Luckiest Guy", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    text-align: center;
+}
