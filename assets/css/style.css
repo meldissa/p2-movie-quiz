@@ -102,4 +102,33 @@ h3, h4 {
     text-transform: uppercase;
 }
 
+/* Start Quiz Section Styles */
 
+#quiz-game-section {
+    background-color: black;
+    border-radius: 25px;
+    width: 600px;
+    max-width: 80%;
+    padding: 25px;
+    border: 1px solid #fff;
+}
+
+#progress-bar {
+    float: left;
+}
+
+#score-display {
+    float: right;
+}
+
+#questions-area {
+    text-align: center;
+    clear: both;
+}
+
+#ans-btn {
+    width: 100%;
+    margin: 10px 0;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
