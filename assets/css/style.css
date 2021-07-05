@@ -133,6 +133,14 @@ h3, h4 {
     font-size: 25px;
 }
 
+.btn-correct {
+    background-color: rgb(144, 219, 31);
+}
+
+.btn-incorrect {
+    background-color: rgb(255, 47, 47);
+}
+
 /* Highscores Section Modal */
 
 .table th {
