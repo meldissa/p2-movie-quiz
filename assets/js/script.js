@@ -1,15 +1,28 @@
-//variables
+//variables to select elements
 const playButton = document.getElementById('play-btn');
 playButton.addEventListener('click', startQuiz);
 
 const homeSection = document.getElementById('home-section');
 const quizSection = document.getElementById('quiz-game-section');
 
-const questionSection = document.getElementById('question');
+const question = document.getElementById('question');
 const ans1 = document.getElementById('ans1');
 const ans2 = document.getElementById('ans2');
 const ans3 = document.getElementById('ans3');
 const ans4 = document.getElementById('ans4');
+
+//additional variables for quiz game
+let runningQuestion = 0;
+
+function renderQuestion() {
+    let q = questions[runningQuestion];
+
+    question.innerHTML = "<p>" + q.question + "</p>";
+    ans1.innerHTML = q.ans1;
+    ans2.innerHTML = q.ans2;
+    ans3.innerHTML = q.ans3;
+    ans4.innerHTML = q.ans4;
+}
 
 //function executed once user starts the quiz game
 function startQuiz() {
@@ -17,10 +30,12 @@ function startQuiz() {
     homeSection.classList.add('hide');
     //hide class removed for quizSection to display the game section
     quizSection.classList.remove('hide');
+    //run function to display question and answers
+    renderQuestion();
 }
 
 //list of quiz questions
-const question = [
+const questions = [
     {
         question: "What was the name of the first film in the 'Harry Potter' series?",
         ans1: "Harry Potter and the Order of the Phoenix",
