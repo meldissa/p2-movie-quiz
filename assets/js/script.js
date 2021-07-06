@@ -58,8 +58,27 @@ function resetState() {
     }
 }
 
-function selectAnswer() {
+function selectAnswer(e) {
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct;
+    setStatusClass(button, button.dataset.correct);
+    Array.from(answerButton.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct);
+    })
+}
 
+function setStatusClass(element, correct) {
+    clearStatusClass(element);
+    if (correct) {
+        element.classList.add('btn-correct');
+    } else {
+        element.classList.add('btn-incorrect');
+    }
+}
+
+function clearStatusClass(element) {
+    element.classList.remove('btn-correct');
+    element.classList.remove('btn-incorrect');
 }
 
 //list of quiz questions
