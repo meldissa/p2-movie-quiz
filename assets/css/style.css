@@ -137,7 +137,7 @@ h3, h4 {
     clear: both;
 }
 
-#ans-btn {
+.ans-btn {
     width: 100%;
     margin: 10px 0;
     letter-spacing: 2px;
