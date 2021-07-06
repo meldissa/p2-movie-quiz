@@ -2,12 +2,21 @@
 const playButton = document.getElementById('play-btn');
 playButton.addEventListener('click', startQuiz);
 
-//additional variables for home and quiz sections
+//variables for home and quiz sections
 const homeSection = document.getElementById('home-section');
 const quizSection = document.getElementById('quiz-game-section');
 
+//variables for the questions and answer for the quiz game
 const questionSection = document.getElementById('question');
 const answerButtons = document.getElementById('ans-btn');
+let shuffledQuestions, currentQuestionIndex;
+
+//variables for the progress bar and score
+const progressBarFull = document.getElementById('progress-bar-full');
+const scoreText = document.getElementById('score');
+
+let score = 0;
+let questionCounter = 0;
 
 //function executed once user starts the quiz game
 function startQuiz() {
@@ -18,15 +27,39 @@ function startQuiz() {
     //generates random quiz questions
     shuffledQuestions = question.sort(() => Math.random() - 0.5);
     currentQuestionIndex = 0;
+    //perform function to show question
     askQuestion();
 }
 
+//function executed to ask question in a random order
 function askQuestion() {
+    //resets to remove the previous question
+    resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
+//function executed to show the question
 function showQuestion(question) {
     questionSection.innerHTML = question.question;
+    const button = document.createElement('button');
+    button.innerText = answer.text;
+    button.classList.add('btn');
+    if (answer.correct) {
+        button.dataset.correct = answer.correct;
+    }
+    button.addEventListener('click', selectAnswer);
+    answerButtons.appendChild(button);
+}
+
+//function executed to remove the previous question
+function resetState() {
+    while (answerButtons.firstChild) {
+        answerButtons.removeChild(answerButtons.firstChild);
+    }
+}
+
+function selectAnswer() {
+
 }
 
 //list of quiz questions
