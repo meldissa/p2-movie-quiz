@@ -1,73 +1,3 @@
-//variables to select elements
-const playButton = document.getElementById('play-btn');
-playButton.addEventListener('click', startQuiz);
-
-const homeSection = document.getElementById('home-section');
-const quizSection = document.getElementById('quiz-game-section');
-
-const question = document.getElementById('question');
-const ans1 = document.getElementById('ans1');
-const ans2 = document.getElementById('ans2');
-const ans3 = document.getElementById('ans3');
-const ans4 = document.getElementById('ans4');
-
-const userScore = document.getElementById('score');
-const progressBar = document.getElementById('progress-bar');
-
-//additional variables for quiz game
-const lastQuestion = questions.length - 1;
-let runningQuestion = 0;
-
-function renderQuestion() {
-    let q = questions[runningQuestion];
-
-    question.innerHTML = "<p>" + q.question + "</p>";
-    ans1.innerHTML = q.ans1;
-    ans2.innerHTML = q.ans2;
-    ans3.innerHTML = q.ans3;
-    ans4.innerHTML = q.ans4;
-}
-
-//function executed once user starts the quiz game
-function startQuiz() {
-    //hide class applied to homeSection to remove display
-    homeSection.classList.add('hide');
-    //hide class removed for quizSection to display the game section
-    quizSection.classList.remove('hide');
-    //run function to display question and answers
-    renderQuestion();
-}
-
-//function to check the answer that user has selected
-function checkAnswer(answer) {
-    if (answer == questions[runningQuestion].correct) {
-        answerCorrect();
-    } else {
-        answerIncorrect();
-    }
-    if (runningQuestion < lastQuestion) {
-        runningQuestion++
-        renderQuestion();
-    } else {
-        endQuiz();
-    }
-}
-
-//function if user selects correct answer
-function answerCorrect() {
-    document.getElementsByClassName('ans-btn').classList.add('btn-correct');
-}
-
-//function if user selects incorrect answer
-function answerIncorrect() {
-    document.getElementsByClassName('ans-btn').classList.add('btn-incorrect');
-}
-
-//function once user finished the quiz
-function endQuiz() {
-    console.log('Ended');
-}
-
 //list of quiz questions
 const questions = [
     {
@@ -231,3 +161,71 @@ const questions = [
         correct: "4"
     }
 ];
+
+//variables to select elements
+const playButton = document.getElementById('play-btn');
+const homeSection = document.getElementById('home-section');
+const quizSection = document.getElementById('quiz-game-section');
+const question = document.getElementById('question');
+const ans1 = document.getElementById('ans1');
+const ans2 = document.getElementById('ans2');
+const ans3 = document.getElementById('ans3');
+const ans4 = document.getElementById('ans4');
+const userScore = document.getElementById('score');
+const progressBar = document.getElementById('progress-bar');
+
+//additional variables for quiz game
+const lastQuestion = questions.length - 1;
+let runningQuestion = 0;
+
+//function to display question and answer choices
+function renderQuestion() {
+    let q = questions[runningQuestion];
+
+    question.innerHTML = "<p>" + q.question + "</p>";
+    ans1.innerHTML = q.ans1;
+    ans2.innerHTML = q.ans2;
+    ans3.innerHTML = q.ans3;
+    ans4.innerHTML = q.ans4;
+}
+
+//event listener to run quiz function
+playButton.addEventListener('click', startQuiz);
+
+//function executed once user starts the quiz game
+function startQuiz() {
+    homeSection.classList.add('hide');
+    quizSection.classList.remove('hide');
+    renderQuestion();
+}
+
+//function to check the answer that user has selected
+function checkAnswer(answer) {
+    if (answer == questions[runningQuestion].correct) {
+        answerCorrect();
+    } else {
+        answerIncorrect();
+    }
+    if (runningQuestion < lastQuestion) {
+        runningQuestion++
+        renderQuestion();
+    } else {
+        endQuiz();
+    }
+}
+
+//function if user selects correct answer
+function answerCorrect() {
+    console.log('Correct');
+}
+
+//function if user selects incorrect answer
+function answerIncorrect() {
+    console.log('Wrong');
+}
+
+//function once user finished the quiz
+function endQuiz() {
+    console.log('Ended');
+}
+
