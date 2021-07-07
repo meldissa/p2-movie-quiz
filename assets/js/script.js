@@ -38,6 +38,36 @@ function startQuiz() {
     renderQuestion();
 }
 
+//function to check the answer that user has selected
+function checkAnswer(answer) {
+    if (answer == questions[runningQuestion].correct) {
+        answerCorrect();
+    } else {
+        answerIncorrect();
+    }
+    if (runningQuestion < lastQuestion) {
+        runningQuestion++
+        renderQuestion();
+    } else {
+        endQuiz();
+    }
+}
+
+//function if user selects correct answer
+function answerCorrect() {
+    document.getElementsByClassName('ans-btn').classList.add('btn-correct');
+}
+
+//function if user selects incorrect answer
+function answerIncorrect() {
+    document.getElementsByClassName('ans-btn').classList.add('btn-incorrect');
+}
+
+//function once user finished the quiz
+function endQuiz() {
+    console.log('Ended');
+}
+
 //list of quiz questions
 const questions = [
     {
