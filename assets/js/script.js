@@ -11,7 +11,11 @@ const ans2 = document.getElementById('ans2');
 const ans3 = document.getElementById('ans3');
 const ans4 = document.getElementById('ans4');
 
+const userScore = document.getElementById('score');
+const progressBar = document.getElementById('progress-bar');
+
 //additional variables for quiz game
+const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 
 function renderQuestion() {
