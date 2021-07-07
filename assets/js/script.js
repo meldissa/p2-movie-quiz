@@ -227,5 +227,6 @@ function answerIncorrect() {
 //function once user finished the quiz
 function endQuiz() {
     console.log('Ended');
+    $("#finish-quiz-modal").modal("show");
 }
 
