@@ -171,7 +171,7 @@ const ans1 = document.getElementById('ans1');
 const ans2 = document.getElementById('ans2');
 const ans3 = document.getElementById('ans3');
 const ans4 = document.getElementById('ans4');
-const userScore = document.getElementById('score');
+const finalScore = document.getElementById('final-score');
 const progressBar = document.getElementById('progress-bar');
 const playAgain = document.getElementById('play-again');
 const returnHome = document.getElementById('return-home');
@@ -182,9 +182,11 @@ let runningQuestion = 0;
 let questionTracker = [];
 let currentQuestion
 let questionCount = 0;
+let score = 0;
 
 //function to display question and answer choices
 function renderQuestion() {
+
     let q = generateRandom();
 
     question.innerHTML = "<p>" + q.question + "</p>";
@@ -192,9 +194,11 @@ function renderQuestion() {
     ans2.innerHTML = q.ans2;
     ans3.innerHTML = q.ans3;
     ans4.innerHTML = q.ans4;
+
 }
 
 function generateRandom() {
+
     let randomQuestion = Math.floor(Math.random() * questions.length);
     currentQuestion = randomQuestion;
     runningQuestion = questions[randomQuestion];
@@ -205,6 +209,7 @@ function generateRandom() {
         generateRandom();
     }
     return runningQuestion;
+
 }
 
 //event listener to run quiz function
@@ -212,14 +217,18 @@ playButton.addEventListener('click', startQuiz);
 
 //function executed once user starts the quiz game
 function startQuiz() {
+
     homeSection.classList.add('hide');
     quizSection.classList.remove('hide');
     renderQuestion();
+
 }
 
 //function to check the answer that user has selected
 function checkAnswer(answer) {
+
     if (answer == questions[currentQuestion].correct) {
+        incrementScore();
         answerCorrect();
     } else {
         answerIncorrect();
@@ -231,22 +240,37 @@ function checkAnswer(answer) {
     } else {
         endQuiz();
     }
+
+}
+
+//function to update the score
+function incrementScore() {
+
+    let userScore = parseInt(document.getElementById('score').innerText);
+    document.getElementById('score').innerText = userScore+=10;
+
 }
 
 //function if user selects correct answer
 function answerCorrect() {
+
     console.log('Correct');
+
 }
 
 //function if user selects incorrect answer
 function answerIncorrect() {
+
     console.log('Wrong');
+
 }
 
 //function once user finished the quiz
 function endQuiz() {
+
     console.log('Ended');
     $("#finish-quiz-modal").modal("show");
+
 }
 
 //event listener to restart quiz 
@@ -254,8 +278,10 @@ playAgain.addEventListener('click', restartQuiz);
 
 //function to restart the quiz
 function restartQuiz() {
+
     $("#finish-quiz-modal").modal("hide");
     renderQuestion();
+
 }
 
 //event listener to go back to home page
@@ -263,9 +289,11 @@ returnHome.addEventListener('click', returnHomePage);
 
 //function to return user back to home page after quiz has ended
 function returnHomePage() {
+
     $("#finish-quiz-modal").modal("hide");
     homeSection.classList.remove('hide');
     quizSection.classList.add('hide');
+
 }
 
 
