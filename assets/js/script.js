@@ -172,7 +172,6 @@ const ans2 = document.getElementById('ans2');
 const ans3 = document.getElementById('ans3');
 const ans4 = document.getElementById('ans4');
 const finalScore = document.getElementById('final-score');
-const progressBar = document.getElementById('progress-bar');
 const playAgain = document.getElementById('play-again');
 const returnHome = document.getElementById('return-home');
 
@@ -270,6 +269,7 @@ function endQuiz() {
 
     console.log('Ended');
     $("#finish-quiz-modal").modal("show");
+
 
 }
 
