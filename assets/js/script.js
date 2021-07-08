@@ -179,16 +179,31 @@ const returnHome = document.getElementById('return-home');
 //additional variables for quiz game
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
+let questionTracker = [];
+let currentQuestion
 
 //function to display question and answer choices
 function renderQuestion() {
-    let q = questions[runningQuestion];
+    let q = generateRandom();
 
     question.innerHTML = "<p>" + q.question + "</p>";
     ans1.innerHTML = q.ans1;
     ans2.innerHTML = q.ans2;
     ans3.innerHTML = q.ans3;
     ans4.innerHTML = q.ans4;
+}
+
+function generateRandom() {
+    let randomQuestion = Math.floor(Math.random() * questions.length);
+    currentQuestion = randomQuestion;
+    runningQuestion = questions[randomQuestion];
+
+    if (!questionTracker.includes(runningQuestion)) {
+        questionTracker.push(runningQuestion);
+    } else {
+        generateRandom();
+    }
+    return runningQuestion;
 }
 
 //event listener to run quiz function
@@ -203,7 +218,7 @@ function startQuiz() {
 
 //function to check the answer that user has selected
 function checkAnswer(answer) {
-    if (answer == questions[runningQuestion].correct) {
+    if (answer == questions[currentQuestion].correct) {
         answerCorrect();
     } else {
         answerIncorrect();
