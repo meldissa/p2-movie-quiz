@@ -236,6 +236,7 @@ function checkAnswer(answer) {
     if (questionCount < 20) {
         runningQuestion++
         renderQuestion();
+        progressBar();
     } else {
         endQuiz();
     }
@@ -247,6 +248,13 @@ function incrementScore() {
 
     let userScore = parseInt(document.getElementById('score').innerText);
     document.getElementById('score').innerText = userScore+=10;
+
+}
+
+//function to update question counter
+function progressBar() {
+
+    let progress = document.getElementById('progress-bar');
 
 }
 

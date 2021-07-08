@@ -63,10 +63,9 @@ body {
 
 #home-section p {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 20px;
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .btn-block {
@@ -117,6 +116,10 @@ h3, h4 {
     float: left;
 }
 
+.progress-bar {
+    background-color: #ffbb59;
+}
+
 #score-display {
     float: right;
 }
@@ -126,11 +129,14 @@ h3, h4 {
     clear: both;
 }
 
+#question {
+    font-size: 20px;
+}
+
 .ans-btn {
     width: 100%;
     margin: 10px 0;
-    letter-spacing: 2px;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .btn-correct {
