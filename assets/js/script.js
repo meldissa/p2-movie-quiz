@@ -233,7 +233,16 @@ function endQuiz() {
 }
 
 //event listener to restart quiz 
-playAgain.addEventListener('click', startQuiz);
+playAgain.addEventListener('click', restartQuiz);
+
+//function to restart the quiz
+function restartQuiz() {
+    $("#finish-quiz-modal").modal("hide");
+    renderQuestion();
+}
+
+//event listener to go back to home page
+returnHome.addEventListener('click', returnHomePage);
 
 //function to return user back to home page after quiz has ended
 function returnHomePage() {
@@ -242,5 +251,4 @@ function returnHomePage() {
     quizSection.classList.add('hide');
 }
 
-//event listener to go back to home page
-returnHome.addEventListener('click', returnHomePage);
+
