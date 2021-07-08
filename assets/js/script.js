@@ -173,6 +173,8 @@ const ans3 = document.getElementById('ans3');
 const ans4 = document.getElementById('ans4');
 const userScore = document.getElementById('score');
 const progressBar = document.getElementById('progress-bar');
+const playAgain = document.getElementById('play-again');
+const returnHome = document.getElementById('return-home');
 
 //additional variables for quiz game
 const lastQuestion = questions.length - 1;
@@ -230,3 +232,15 @@ function endQuiz() {
     $("#finish-quiz-modal").modal("show");
 }
 
+//event listener to restart quiz 
+playAgain.addEventListener('click', startQuiz);
+
+//function to return user back to home page after quiz has ended
+function returnHomePage() {
+    $("#finish-quiz-modal").modal("hide");
+    homeSection.classList.remove('hide');
+    quizSection.classList.add('hide');
+}
+
+//event listener to go back to home page
+returnHome.addEventListener('click', returnHomePage);
