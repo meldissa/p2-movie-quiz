@@ -181,6 +181,7 @@ const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let questionTracker = [];
 let currentQuestion
+let questionCount = 0;
 
 //function to display question and answer choices
 function renderQuestion() {
@@ -223,7 +224,8 @@ function checkAnswer(answer) {
     } else {
         answerIncorrect();
     }
-    if (runningQuestion < lastQuestion) {
+
+    if (questionCount < 20) {
         runningQuestion++
         renderQuestion();
     } else {
