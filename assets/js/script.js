@@ -166,157 +166,228 @@ const questions = [
 const playButton = document.getElementById('play-btn');
 const homeSection = document.getElementById('home-section');
 const quizSection = document.getElementById('quiz-game-section');
-const question = document.getElementById('question');
-const ans1 = document.getElementById('ans1');
-const ans2 = document.getElementById('ans2');
-const ans3 = document.getElementById('ans3');
-const ans4 = document.getElementById('ans4');
-const finalScore = document.getElementById('final-score');
 const playAgain = document.getElementById('play-again');
 const returnHome = document.getElementById('return-home');
+
+const question = document.getElementById('question');
+const answers = Array.from(document.querySelectorAll('.ans-btn'));
 const progressText = document.getElementById('progress-text');
+const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progress-bar-full');
-const unsername = document.getElementById('username');
-const saveScoreButton = document.getElementById('save-score');
 
-//additional variables for quiz game
-const lastQuestion = questions.length - 1;
+//variables for quiz game
+
+let currentQuestion = {};
+let acceptingAnswers = true;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
+
+const SCORE_POINTS = 10;
 const MAX_QUESTIONS = 20;
-let runningQuestion = 0;
-let questionTracker = [];
-let currentQuestion
-let questionCount = 0;
 
-//function to display question and answer choices
-function renderQuestion() {
-
-    let q = questions[runningQuestion];
-
-    question.innerHTML = "<p>" + q.question + "</p>";
-    ans1.innerHTML = q.ans1;
-    ans2.innerHTML = q.ans2;
-    ans3.innerHTML = q.ans3;
-    ans4.innerHTML = q.ans4;
-
-    //increase question count and update progress bar after each question
-    questionCount++;
-    progressText.innerText = `Question ${questionCount} of ${MAX_QUESTIONS}`
-    progressBarFull.style.width = `${(questionCount/MAX_QUESTIONS) * 100}%`
-
-}
-
-//function to randomise the questions in the quiz game
-// function generateRandom() {
-
-//     let randomQuestion = Math.floor(Math.random() * questions.length);
-//     currentQuestion = randomQuestion;
-//     runningQuestion = questions[randomQuestion];
-
-//     if (!questionTracker.includes(runningQuestion)) {
-//         questionTracker.push(runningQuestion);
-//     } else {
-//         generateRandom();
-//     }
-//     return runningQuestion;
-
-// }
-
-//event listener to run quiz function
 playButton.addEventListener('click', startQuiz);
 
-//function executed once user starts the quiz game
 function startQuiz() {
 
     homeSection.classList.add('hide');
     quizSection.classList.remove('hide');
-    resetStatistics();
+    questionCounter = 0;
+    score = 0;
+    availableQuestions = [...questions];
     renderQuestion();
 
 }
 
-//function to check the answer that user has selected
-function checkAnswer(answer) {
+function renderQuestion() {
 
-    if (answer == questions[runningQuestion].correct) {
-        incrementScore();
-        answerCorrect();
-    } else {
-        answerIncorrect();
+    if(availableQuestions.length === 0 || questionCounter < MAX_QUESTIONS) {
+        localStorage.setItem('mostRecentScore', score);
+
+        // return window.location.assign('/end.html');
     }
 
-    if (questionCount < MAX_QUESTIONS) {
-        runningQuestion++
-        renderQuestion();
-    } else {
-        endQuiz();
-    }
+    questionCounter++;
+    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionsIndex];
+    question.innerText = currentQuestion.question;
+
+    answers.forEach(ans => {
+        const number = ans.dataset['number'];
+        ans.innerText = currentQuestion['ans' + number];
+    })
+
+    availableQuestions.splice(questionsIndex, 1);
+
+    acceptingAnswers = true;
 }
 
-//function to update the score
-function incrementScore() {
+answers.forEach(ans => {
+    ans.addEventListener('click', e => {
+        if(!acceptingAnswers) return
 
-    let userScore = parseInt(document.getElementById('score').innerText);
-    document.getElementById('score').innerText = userScore+=10;
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset['number'];
 
+        let classToApply = selectedAnswer == currentQuestion.correct ? 'btn-correct' : 'btn-incorrect';
+
+        if(classToApply === 'btn-correct') {
+            incrementScore(SCORE_POINTS);
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply);
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply);
+            renderQuestion();
+
+        }, 1000)
+    })
+})
+
+incrementScore = num => {
+    score +=num;
+    scoreText.innerText = score;
 }
 
-//function if user selects correct answer
-function answerCorrect() {
-
-    console.log('Correct');
-
-}
-
-//function if user selects incorrect answer
-function answerIncorrect() {
-
-    console.log('Wrong');
-
-}
-
-//function once user finished the quiz
-function endQuiz() {
-
-    console.log('Ended');
-    $("#finish-quiz-modal").modal("show");
-    finalScore.innerText = userScore;
+// startQuiz();
 
 
 
+// //function to display question and answer choices
+// function renderQuestion() {
 
-}
+//     let q = questions[runningQuestion];
 
-//event listener to restart quiz 
-playAgain.addEventListener('click', restartQuiz);
+//     question.innerHTML = "<p>" + q.question + "</p>";
+//     ans1.innerHTML = q.ans1;
+//     ans2.innerHTML = q.ans2;
+//     ans3.innerHTML = q.ans3;
+//     ans4.innerHTML = q.ans4;
 
-//function to restart the quiz
-function restartQuiz() {
+//     //increase question count and update progress bar after each question
+//     questionCount++;
+//     progressText.innerText = `Question ${questionCount} of ${MAX_QUESTIONS}`
+//     progressBarFull.style.width = `${(questionCount/MAX_QUESTIONS) * 100}%`
 
-    $("#finish-quiz-modal").modal("hide");
-    startQuiz();
+// }
 
-}
+// //function to randomise the questions in the quiz game
+// // function generateRandom() {
 
-//event listener to go back to home page
-returnHome.addEventListener('click', returnHomePage);
+// //     let randomQuestion = Math.floor(Math.random() * questions.length);
+// //     currentQuestion = randomQuestion;
+// //     runningQuestion = questions[randomQuestion];
 
-//function to return user back to home page after quiz has ended
-function returnHomePage() {
+// //     if (!questionTracker.includes(runningQuestion)) {
+// //         questionTracker.push(runningQuestion);
+// //     } else {
+// //         generateRandom();
+// //     }
+// //     return runningQuestion;
 
-    $("#finish-quiz-modal").modal("hide");
-    homeSection.classList.remove('hide');
-    quizSection.classList.add('hide');
+// // }
 
-}
+// //event listener to run quiz function
+// playButton.addEventListener('click', startQuiz);
 
-//function to reset the score and question count
-function resetStatistics() {
+// //function executed once user starts the quiz game
+// function startQuiz() {
 
-    runningQuestion = 0;
-    questionCount = 0;
-    userScore = 0;
+//     homeSection.classList.add('hide');
+//     quizSection.classList.remove('hide');
+//     resetStatistics();
+//     renderQuestion();
 
-}
+// }
+
+// //function to check the answer that user has selected
+// function checkAnswer(answer) {
+
+//     if (answer == questions[runningQuestion].correct) {
+//         incrementScore();
+//         answerCorrect();
+//     } else {
+//         answerIncorrect();
+//     }
+
+//     if (questionCount < MAX_QUESTIONS) {
+//         runningQuestion++
+//         renderQuestion();
+//     } else {
+//         endQuiz();
+//     }
+
+// }
+
+// //function to update the score
+// function incrementScore() {
+
+//     let userScore = parseInt(document.getElementById('score').innerText);
+//     document.getElementById('score').innerText = userScore+=10;
+
+// }
+
+// //function if user selects correct answer
+// function answerCorrect() {
+
+//     console.log('Correct');
+
+// }
+
+// //function if user selects incorrect answer
+// function answerIncorrect() {
+
+//     console.log('Wrong');
+
+// }
+
+// //function once user finished the quiz
+// function endQuiz() {
+
+//     console.log('Ended');
+//     $("#finish-quiz-modal").modal("show");
+//     finalScore.innerText = userScore;
+
+
+
+
+// }
+
+// //event listener to restart quiz 
+// playAgain.addEventListener('click', restartQuiz);
+
+// //function to restart the quiz
+// function restartQuiz() {
+
+//     $("#finish-quiz-modal").modal("hide");
+//     startQuiz();
+
+// }
+
+// //event listener to go back to home page
+// returnHome.addEventListener('click', returnHomePage);
+
+// //function to return user back to home page after quiz has ended
+// function returnHomePage() {
+
+//     $("#finish-quiz-modal").modal("hide");
+//     homeSection.classList.remove('hide');
+//     quizSection.classList.add('hide');
+
+// }
+
+// //function to reset the score and question count
+// function resetStatistics() {
+
+//     runningQuestion = 0;
+//     questionCount = 0;
+//     userScore = 0;
+
+// }
 
 
