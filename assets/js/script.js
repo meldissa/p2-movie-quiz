@@ -174,9 +174,12 @@ const ans4 = document.getElementById('ans4');
 const finalScore = document.getElementById('final-score');
 const playAgain = document.getElementById('play-again');
 const returnHome = document.getElementById('return-home');
+const progressText = document.getElementById('progress-text');
+const progressBarFull = document.getElementById('progress-bar-full');
 
 //additional variables for quiz game
 const lastQuestion = questions.length - 1;
+const MAX_QUESTIONS = 20;
 let runningQuestion = 0;
 let questionTracker = [];
 let currentQuestion
@@ -193,6 +196,11 @@ function renderQuestion() {
     ans2.innerHTML = q.ans2;
     ans3.innerHTML = q.ans3;
     ans4.innerHTML = q.ans4;
+
+    //increase question count and update progress bar after each question
+    questionCount++;
+    progressText.innerText = `Question ${questionCount} of ${MAX_QUESTIONS}`
+    progressBarFull.style.width = `${(questionCount/MAX_QUESTIONS) * 100}%`
 
 }
 
@@ -236,7 +244,6 @@ function checkAnswer(answer) {
     if (questionCount < 20) {
         runningQuestion++
         renderQuestion();
-        progressBar();
     } else {
         endQuiz();
     }
