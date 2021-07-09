@@ -184,12 +184,11 @@ let runningQuestion = 0;
 let questionTracker = [];
 let currentQuestion
 let questionCount = 0;
-let score = 0;
 
 //function to display question and answer choices
 function renderQuestion() {
 
-    let q = generateRandom();
+    let q = questions[runningQuestion];
 
     question.innerHTML = "<p>" + q.question + "</p>";
     ans1.innerHTML = q.ans1;
@@ -204,20 +203,21 @@ function renderQuestion() {
 
 }
 
-function generateRandom() {
+//function to randomise the questions in the quiz game
+// function generateRandom() {
 
-    let randomQuestion = Math.floor(Math.random() * questions.length);
-    currentQuestion = randomQuestion;
-    runningQuestion = questions[randomQuestion];
+//     let randomQuestion = Math.floor(Math.random() * questions.length);
+//     currentQuestion = randomQuestion;
+//     runningQuestion = questions[randomQuestion];
 
-    if (!questionTracker.includes(runningQuestion)) {
-        questionTracker.push(runningQuestion);
-    } else {
-        generateRandom();
-    }
-    return runningQuestion;
+//     if (!questionTracker.includes(runningQuestion)) {
+//         questionTracker.push(runningQuestion);
+//     } else {
+//         generateRandom();
+//     }
+//     return runningQuestion;
 
-}
+// }
 
 //event listener to run quiz function
 playButton.addEventListener('click', startQuiz);
@@ -227,6 +227,7 @@ function startQuiz() {
 
     homeSection.classList.add('hide');
     quizSection.classList.remove('hide');
+    resetStatistics();
     renderQuestion();
 
 }
@@ -234,14 +235,14 @@ function startQuiz() {
 //function to check the answer that user has selected
 function checkAnswer(answer) {
 
-    if (answer == questions[currentQuestion].correct) {
+    if (answer == questions[runningQuestion].correct) {
         incrementScore();
         answerCorrect();
     } else {
         answerIncorrect();
     }
 
-    if (questionCount < 20) {
+    if (questionCount < MAX_QUESTIONS) {
         runningQuestion++
         renderQuestion();
     } else {
@@ -255,13 +256,6 @@ function incrementScore() {
 
     let userScore = parseInt(document.getElementById('score').innerText);
     document.getElementById('score').innerText = userScore+=10;
-
-}
-
-//function to update question counter
-function progressBar() {
-
-    let progress = document.getElementById('progress-bar');
 
 }
 
@@ -295,7 +289,7 @@ playAgain.addEventListener('click', restartQuiz);
 function restartQuiz() {
 
     $("#finish-quiz-modal").modal("hide");
-    renderQuestion();
+    startQuiz();
 
 }
 
@@ -308,6 +302,15 @@ function returnHomePage() {
     $("#finish-quiz-modal").modal("hide");
     homeSection.classList.remove('hide');
     quizSection.classList.add('hide');
+
+}
+
+//function to reset the score and question count
+function resetStatistics() {
+
+    runningQuestion = 0;
+    questionCount = 0;
+    userScore = 0;
 
 }
 
