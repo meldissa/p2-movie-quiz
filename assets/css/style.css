@@ -36,6 +36,11 @@ body {
     background-color: #ffbb59;
     border: none;
     color: black;
+    cursor: pointer;
+}
+
+.btn[disabled]:hover {
+    cursor: not-allowed;
 }
 
 .hide {
@@ -106,7 +111,7 @@ h3, h4 {
 #quiz-game-section {
     background-color: black;
     border-radius: 25px;
-    width: 600px;
+    width: 100%;
     max-width: 80%;
     padding: 25px;
     border: 1px solid #fff;
