@@ -145,11 +145,11 @@ h3, h4 {
 }
 
 .btn-correct {
-    background-color: rgb(144, 219, 31);
+    background: rgb(143, 199, 59);
 }
 
 .btn-incorrect {
-    background-color: rgb(255, 47, 47);
+    background: rgb(255, 47, 47);
 }
 
 /* Highscores Section Modal */
