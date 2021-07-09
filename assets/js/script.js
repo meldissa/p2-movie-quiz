@@ -176,6 +176,8 @@ const playAgain = document.getElementById('play-again');
 const returnHome = document.getElementById('return-home');
 const progressText = document.getElementById('progress-text');
 const progressBarFull = document.getElementById('progress-bar-full');
+const unsername = document.getElementById('username');
+const saveScoreButton = document.getElementById('save-score');
 
 //additional variables for quiz game
 const lastQuestion = questions.length - 1;
@@ -278,6 +280,9 @@ function endQuiz() {
 
     console.log('Ended');
     $("#finish-quiz-modal").modal("show");
+    finalScore.innerText = userScore;
+
+
 
 
 }
