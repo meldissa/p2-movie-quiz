@@ -237,10 +237,12 @@ answers.forEach(ans => {
             incrementScore(SCORE_POINTS);
         }
 
-        selectedChoice.parentElement.classList.add(classToApply);
+        selectedChoice.classList.add(classToApply);
+        selectedChoice.classList.remove('ans-btn');
 
         setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply);
+            selectedChoice.classList.remove(classToApply);
+            selectedChoice.classList.add('ans-btn');
             renderQuestion();
 
         }, 1000)
@@ -334,7 +336,6 @@ exitNoBtn.addEventListener('click', () => {
 //highscores modal section
 
 const highScoresList = document.getElementById('high-scores-list');
-// const highScores = (JSON.parse(localStorage.getItem('highScores')) || [])
 
 highScoresList.innerHTML = 
 highScores.map(score => {

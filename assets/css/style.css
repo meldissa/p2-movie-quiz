@@ -32,15 +32,15 @@ body {
     color: #fff;
 }
 
-.btn:hover {
+.btn[disabled]:hover {
+    cursor: not-allowed;
+}
+
+.btn-hover:hover {
     background-color: #ffbb59;
     border: none;
     color: black;
     cursor: pointer;
-}
-
-.btn[disabled]:hover {
-    cursor: not-allowed;
 }
 
 .hide {
@@ -138,18 +138,29 @@ h3, h4 {
     font-size: 20px;
 }
 
-.ans-btn {
+#quiz-game-section .btn {
     width: 100%;
     margin: 10px 0;
     font-size: 20px;
 }
 
+.ans-btn:hover {
+    background-color: #ffbb59;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+
 .btn-correct {
-    background: rgb(143, 199, 59);
+    background-color: rgb(143, 199, 59);
+    border: none;
+    color: #fff;
 }
 
 .btn-incorrect {
-    background: rgb(255, 47, 47);
+    background-color: rgb(255, 47, 47);
+    border: none;
+    color: #fff;
 }
 
 /* Highscores Section Modal */
