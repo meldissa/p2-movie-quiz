@@ -245,7 +245,7 @@ answers.forEach(ans => {
             selectedChoice.classList.add('ans-btn');
             renderQuestion();
 
-        }, 1000)
+        }, 800)
     })
 })
 
