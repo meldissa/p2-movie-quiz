@@ -291,6 +291,11 @@ saveHighScore = e => {
     window.location.assign('/')
 }
 
+playAgainBtn.addEventListener('click', () => {
+    $("#finish-quiz-modal").modal("hide"); 
+    startQuiz();
+})
+
 //highscores modal section
 
 const highScoresList = document.getElementById('high-scores-list');
@@ -305,7 +310,26 @@ highScores.map(score => {
 })
 .join('')
 
+//clear highscores modal section
 
+const clearBtn = document.getElementById('clear-scores');
+const clearYesBtn = document.getElementById('cs-yes');
+const clearNoBtn = document.getElementById('cs-no');
+
+clearBtn.addEventListener('click', () => {
+    $("#clear-modal").modal("show");
+    $("#highscores-modal").modal("hide");
+})
+
+clearYesBtn.addEventListener('click', () => {
+    localStorage.removeItem('highScores');
+    highScoresList.style.display = "none";
+    $("#highscores-modal").modal("show");
+})
+
+clearNoBtn.addEventListener('click', () => {
+    $("#highscores-modal").modal("show");
+})
 
 
 // //function to display question and answer choices

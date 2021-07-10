@@ -152,6 +152,7 @@
                         </table>
                     </div>
                     <div class="modal-footer">
+                        <button type="button" class="btn" id="clear-scores">Clear Scores</button>
                         <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -159,6 +160,31 @@
         </div>
     </section>
     <!-- End of Highscores Section Modal -->
+    <!-- Start of Clear Scores Modal -->
+    <section id="clear-scores-section">
+        <div class="modal fade" id="clear-modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Please Confirm</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Are you sure you want to clear all highscores?
+                        </p>
+                        <p>
+                            This action cannot be undone.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" id="cs-yes" data-bs-dismiss="modal">Yes</button>
+                        <button type="button" class="btn" id="cs-no" data-bs-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Clear Scores Modal -->
     <!-- jQuery Script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap Script -->
