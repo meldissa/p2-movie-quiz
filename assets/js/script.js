@@ -166,8 +166,6 @@ const questions = [
 const playButton = document.getElementById('play-btn');
 const homeSection = document.getElementById('home-section');
 const quizSection = document.getElementById('quiz-game-section');
-const playAgain = document.getElementById('play-again');
-const returnHome = document.getElementById('return-home');
 
 const question = document.getElementById('question');
 const answers = Array.from(document.querySelectorAll('.ans-btn'));
@@ -254,7 +252,59 @@ incrementScore = num => {
     scoreText.innerText = score;
 }
 
-// startQuiz();
+//end quiz modal section
+
+const username = document.getElementById('username');
+const saveScoreBtn = document.getElementById('save-score');
+const finalScore = document.getElementById('final-score');
+const mostRecentScore = localStorage.getItem('mostRecentScore');
+const playAgainBtn = document.getElementById('play-again');
+const returnHomeBtn = document.getElementById('return-home');
+
+const highScores = (JSON.parse(localStorage.getItem('highScores')) || []);
+
+const MAX_HIGH_SCORES = 10;
+
+finalScore.innerText = mostRecentScore;
+
+username.addEventListener('keyup', () => {
+    saveScoreBtn.disabled = !username.value;
+})
+
+saveHighScore = e => {
+    e.preventDefault()
+
+    const score = {
+        score: mostRecentScore,
+        name: username.value
+    }
+
+    highScores.push(score)
+
+    highScores.sort((a,b) => {
+        return b.score - a.score
+    })
+
+    highScores.splice(10)
+
+    localStorage.setItem('highScores', JSON.stringify(highScores))
+    window.location.assign('/')
+}
+
+//highscores modal section
+
+const highScoresList = document.getElementById('high-scores-list');
+// const highScores = (JSON.parse(localStorage.getItem('highScores')) || [])
+
+highScoresList.innerHTML = 
+highScores.map(score => {
+    return `<tr class="select">
+    <td>${score.name}</td>
+    <td>${score.score}</td>
+    </tr>`;
+})
+.join('')
+
 
 
 

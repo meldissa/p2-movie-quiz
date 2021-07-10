@@ -91,7 +91,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn" id="return-home">Return Home</button>
                         <button type="button" class="btn" id="play-again">Play Again</button>
-                        <button type="button" class="btn" id="save-score">Save Score</button>
+                        <button type="button" class="btn" id="save-score" onclick="saveHighScore(event)" disabled>Save Score</button>
                     </div>
                 </div>
             </div>
@@ -144,12 +144,11 @@
                         <table class="table table-dark table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Score</th>
                                 </tr>
                             </thead>
-                            <tbody id="scores"></tbody>
+                            <tbody id="high-scores-list"></tbody>
                         </table>
                     </div>
                     <div class="modal-footer">
