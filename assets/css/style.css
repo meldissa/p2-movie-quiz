@@ -151,6 +151,26 @@ body {
     color: #fff;
 }
 
+#exit-game {
+    font-family: "Luckiest Guy", sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: black;
+    border: 1px solid #ffbb59;
+    color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 8px
+}
+
+#exit-game:hover {
+    background-color: #ffbb59;
+    border: 1px solid #ffbb59;
+    color: black;
+}
+
 /* General Modal Content Styles */
 
 .modal-content {
