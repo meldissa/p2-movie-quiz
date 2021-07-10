@@ -293,6 +293,7 @@ saveHighScore = e => {
 
 playAgainBtn.addEventListener('click', () => {
     $("#finish-quiz-modal").modal("hide"); 
+    scoreText.innerText = 0;
     startQuiz();
 })
 
