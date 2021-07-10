@@ -86,31 +86,6 @@ body {
     font-size: 25px;
 }
 
-/* Modal Content Styles */
-
-.modal-content {
-    background-color: black;
-    border: 1px solid #fff;
-}
-
-.modal-footer .btn {
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-h2 {
-    font-family: "Luckiest Guy", sans-serif;
-    font-size: 2.25rem;
-    letter-spacing: 2px;
-    padding-top: 8px;
-}
-
-h3, h4 {
-    font-family: "Luckiest Guy", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
 /* Start Quiz Section Styles */
 
 #quiz-game-section {
@@ -163,9 +138,34 @@ h3, h4 {
 }
 
 .btn-incorrect {
-    background-color: rgb(255, 47, 47);
+    background-color: rgb(250, 25, 25);
     border: none;
     color: #fff;
+}
+
+/* General Modal Content Styles */
+
+.modal-content {
+    background-color: black;
+    border: 1px solid #fff;
+}
+
+.modal-footer .btn {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: "Luckiest Guy", sans-serif;
+    font-size: 2.25rem;
+    letter-spacing: 2px;
+    padding-top: 8px;
+}
+
+h3, h4 {
+    font-family: "Luckiest Guy", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Rules Section Modal */
