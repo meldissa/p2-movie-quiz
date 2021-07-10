@@ -166,6 +166,9 @@ const questions = [
 const playButton = document.getElementById('play-btn');
 const homeSection = document.getElementById('home-section');
 const quizSection = document.getElementById('quiz-game-section');
+const exitGameButton = document.getElementById('exit-game');
+const exitYesBtn = document.getElementById('exit-yes');
+const exitNoBtn = document.getElementById('exit-no');
 
 const question = document.getElementById('question');
 const answers = Array.from(document.querySelectorAll('.ans-btn'));
@@ -254,6 +257,12 @@ incrementScore = num => {
     scoreText.innerText = score;
 }
 
+//exit quiz game
+
+exitGameButton.addEventListener('click', () => {
+    $("#exit-modal").modal("show");
+})
+
 //end quiz modal section
 
 const username = document.getElementById('username');
@@ -317,12 +326,12 @@ restartNoBtn.addEventListener('click', () => {
 
 //return to home page without saving score
 
-const exitYesBtn = document.getElementById('exit-yes');
-const exitNoBtn = document.getElementById('exit-no');
+let clickreturnHomeBtn;
 
 returnHomeBtn.addEventListener('click', () => {
     $("#exit-modal").modal("show");
     $("#finish-quiz-modal").modal("hide");
+    clickreturnHomeBtn = true;
 })
 
 exitYesBtn.addEventListener('click', () => {
@@ -330,7 +339,11 @@ exitYesBtn.addEventListener('click', () => {
 })
 
 exitNoBtn.addEventListener('click', () => {
-    $("#finish-quiz-modal").modal("show");
+    if(clickreturnHomeBtn === true) {
+        $("#finish-quiz-modal").modal("show");
+    } else {
+        $("#exit-modal").modal("hide");
+    }   
 })
 
 //highscores modal section
