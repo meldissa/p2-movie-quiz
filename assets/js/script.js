@@ -293,11 +293,25 @@ saveHighScore = e => {
 
 //replay quiz game without saving score
 
+const restartYesBtn = document.getElementById('restart-yes');
+const restartNoBtn = document.getElementById('restart-no');
+
 playAgainBtn.addEventListener('click', () => {
+    $("#play-again-modal").modal("show");
+    $("#finish-quiz-modal").modal("hide"); 
+})
+
+restartYesBtn.addEventListener('click', () => {
     $("#finish-quiz-modal").modal("hide"); 
     scoreText.innerText = 0;
     startQuiz();
 })
+
+restartNoBtn.addEventListener('click', () => {
+    $("#finish-quiz-modal").modal("show"); 
+})
+
+
 
 //return to home page without saving score
 
@@ -307,7 +321,6 @@ const exitNoBtn = document.getElementById('exit-no');
 returnHomeBtn.addEventListener('click', () => {
     $("#exit-modal").modal("show");
     $("#finish-quiz-modal").modal("hide");
-    console.log('clicked');
 })
 
 exitYesBtn.addEventListener('click', () => {
