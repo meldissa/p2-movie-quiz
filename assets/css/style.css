@@ -91,9 +91,9 @@ body {
 #quiz-game-section {
     background-color: black;
     border-radius: 25px;
-    width: 100%;
+    width: 800px;
     max-width: 80%;
-    padding: 25px;
+    padding: 50px 25px 50px 25px;
     border: 1px solid #fff;
 }
 
@@ -107,11 +107,19 @@ body {
 
 #score-display {
     float: right;
+    padding-top: 10px;
+}
+
+#score {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
 }
 
 #questions-area {
     text-align: center;
     clear: both;
+    padding-top: 30px;
 }
 
 #question {
