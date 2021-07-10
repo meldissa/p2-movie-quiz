@@ -291,10 +291,31 @@ saveHighScore = e => {
     window.location.assign('/')
 }
 
+//replay quiz game without saving score
+
 playAgainBtn.addEventListener('click', () => {
     $("#finish-quiz-modal").modal("hide"); 
     scoreText.innerText = 0;
     startQuiz();
+})
+
+//return to home page without saving score
+
+const exitYesBtn = document.getElementById('exit-yes');
+const exitNoBtn = document.getElementById('exit-no');
+
+returnHomeBtn.addEventListener('click', () => {
+    $("#exit-modal").modal("show");
+    $("#finish-quiz-modal").modal("hide");
+    console.log('clicked');
+})
+
+exitYesBtn.addEventListener('click', () => {
+    window.location.assign('/')
+})
+
+exitNoBtn.addEventListener('click', () => {
+    $("#finish-quiz-modal").modal("show");
 })
 
 //highscores modal section
