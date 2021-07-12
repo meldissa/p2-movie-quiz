@@ -307,7 +307,7 @@ saveHighScore = e => {
     highScores.splice(10)
 
     localStorage.setItem('highScores', JSON.stringify(highScores))
-    window.location.assign('/')
+    window.location.assign('index.html')
 }
 
 //replay quiz game without saving score
@@ -351,7 +351,7 @@ returnHomeBtn.addEventListener('click', () => {
 
 //event listener if user select yes button
 exitYesBtn.addEventListener('click', () => {
-    window.location.assign('/')
+    window.location.assign('index.html')
 })
 
 //event listener if user select no button
