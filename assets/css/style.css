@@ -248,6 +248,33 @@ body {
     }
 }
 
+@media (max-width: 308px) {
+    #quiz-game-section h4 {
+        font-size: 14px;
+    }
+}
+
+@media (max-height: 655px) {
+    #quiz-game-section {
+        padding: 22px;
+    }
+
+    #quiz-game-section .btn {
+        margin: 5px 0;
+    }
+}
+
+@media (max-height: 568px) {
+    #quiz-game-section {
+        padding: 18px;
+    }
+
+    hr {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+}
+
 /* General Modal Content Styles */
 
 .modal-content {
@@ -328,5 +355,17 @@ tbody {
 
     tbody {
         font-size: 16px;
+    }
+}
+
+/* Finish Quiz Section Modal */
+
+@media (max-width: 420px) {
+    #finish-quiz-section h2 {
+        font-size: 1.45rem;
+    }  
+
+    #return-home, #play-again, #save-score {
+        width: 100%;
     }
 }
