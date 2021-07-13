@@ -132,6 +132,9 @@ The Home section consists of content which provides the user an introduction of 
 
 Due to time constraints, I was unable to apply additional features, in the future I would like to implement the following:
 
+* Add more categories to the quiz to allow the user to shuffle between different categories and questions to test their knowledge on wider range of topics. For example, make specific categories for the movies such as animated, action, horror etc.
+* Add a timer element to the quiz to give the user a set timeframe to answer the question displayed.
+
 ## Technologies Used <a name="tech-used"></a>
 
 For this project the main languages used are __HTML5__, __CSS3__ and __JavaScript__.
