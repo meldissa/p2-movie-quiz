@@ -134,34 +134,36 @@ Due to time constraints, I was unable to apply additional features, in the futur
 
 ## Technologies Used <a name="tech-used"></a>
 
-For this project the main languages used are __HTML5__, __CSS3__ and __Vanilla JavaScript__.
+For this project the main languages used are __HTML5__, __CSS3__ and __JavaScript__.
 
 I have also utilised the following frameworks, libraries, and tools:
 
-* [Bootstrap v5.0.1](https://getbootstrap.com/): 
+* [Bootstrap v5.0.2](https://getbootstrap.com/): 
     * Bootstrap has been used for overall responsiveness of the website, and for the layout to include navigation, carousel, featurette, and forms within the relevant sections of the website.
+* [jQuery](https://jquery.com/):
+    * jQuery was used for additional function to display the modal sections in this project.
 * [GitPod](https://www.gitpod.io/): 
     * I used GitPod as the IDE for this project and Git has been used for Version Control.
 * [GitHub](https://www.github.com/): 
     * GitHub has been used to create a repository to host the project and receive updated commits from GitPod.
 * [Balsamiq](https://balsamiq.com/): 
     * I used Balsamiq to create the wireframe for the website for the basic structure and layout.
-* [Coolors](https://coolors.co/): 
-    * I used Coolors website to create the color palette for my project to use this as a reference.
+* [Flaticon](https://www.flaticon.com/): 
+    * I used Flaticon website to obtain the favicon image used for this project.
 * [Freepik](https://www.freepik.com/): 
     * Freepik has been used for copyright free images for this project.
 * [Google Fonts](https://getbootstrap.com/): 
     * I have used Google Fonts to import fonts for styling purposes for this project.
 * [GIMP v2.10](https://www.gimp.org/): 
-    * GIMP image manipulator program was used to re-size images for this project.
-* [Online Image Compressor](https://imagecompressor.com/):
-    * Online Image Compressor was used to compress the 3 header images used in the carousel slider to improve the performance of the website on mobile.
+    * GIMP image manipulator program was used to change contrast for the background image used this project.
 * [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools): 
     * Chrome Dev Tools was used to test the site, assist with debugging issues and run reports from Lighthouse.
 * [W3C Markup Validation Service](https://validator.w3.org/): 
     * The W3C Markup Validation Service was used to validate the HTML document for this project and to identify any issues with the code.
 * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/): 
     * The W3C CSS Validation Service was used to validate the CSS document for this project and to identify any issues with the code.
+* [JSHint Validation Service](https://jshint.com/): 
+    * The JSHint Validation Service was used to validate the JavaScript document for this project and to identify any issues with the code.
 * [Color Contrast Accessibility Validator](https://color.a11y.com/):
     * This was used to test the color contrast accessibility for this project.
 * [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/):
