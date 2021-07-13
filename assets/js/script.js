@@ -220,8 +220,8 @@ function renderQuestion() {
 
     //questions counter increases which updates the progress bar and text
     questionCounter++;
-    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
-    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`;
 
     //variable created to randomise the questions
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -232,7 +232,7 @@ function renderQuestion() {
     answers.forEach(ans => {
         const number = ans.dataset['number'];
         ans.innerText = currentQuestion['ans' + number];
-    })
+    });
 
     availableQuestions.splice(questionsIndex, 1);
 
@@ -242,7 +242,7 @@ function renderQuestion() {
 //function to check which answer the user has chose
 answers.forEach(ans => {
     ans.addEventListener('click', e => {
-        if(!acceptingAnswers) return
+        if(!acceptingAnswers) return;
 
         acceptingAnswers = false;
         const selectedChoice = e.target;
@@ -266,15 +266,15 @@ answers.forEach(ans => {
             selectedChoice.classList.add('ans-btn');
             renderQuestion();
 
-        }, 800)
-    })
-})
+        }, 800);
+    });
+});
 
 //function to update the user score
 incrementScore = num => {
     score +=num;
     scoreText.innerText = score;
-}
+};
 
 //end quiz modal section
 
@@ -287,11 +287,11 @@ finalScore.innerText = userScore;
 //event listener to allow user to click the save button once username entered
 username.addEventListener('keyup', () => {
     saveScoreBtn.disabled = !username.value;
-})
+});
 
 //function to save the high score
 saveHighScore = e => {
-    e.preventDefault()
+    e.preventDefault();
 
     const score = {
         score: userScore,
@@ -307,7 +307,7 @@ saveHighScore = e => {
     highScores.splice(10)
 
     localStorage.setItem('highScores', JSON.stringify(highScores))
-    window.location.assign('index.html')
+    window.location.assign('index.html');
 }
 
 //replay quiz game without saving score
@@ -316,19 +316,19 @@ saveHighScore = e => {
 playAgainBtn.addEventListener('click', () => {
     $("#play-again-modal").modal("show");
     $("#finish-quiz-modal").modal("hide"); 
-})
+});
 
 //event listener if user select yes button
 restartYesBtn.addEventListener('click', () => {
     $("#finish-quiz-modal").modal("hide"); 
     scoreText.innerText = 0;
     startQuiz();
-})
+});
 
 //event listener if user select no button
 restartNoBtn.addEventListener('click', () => {
     $("#finish-quiz-modal").modal("show"); 
-})
+});
 
 
 /* exit quiz game without finishing or 
@@ -340,19 +340,19 @@ let clickreturnHomeBtn;
 //event listener when user clicks the quit game button
 exitGameButton.addEventListener('click', () => {
     $("#exit-modal").modal("show");
-})
+});
 
 //event listener when user clicks the return home button
 returnHomeBtn.addEventListener('click', () => {
     $("#exit-modal").modal("show");
     $("#finish-quiz-modal").modal("hide");
     clickreturnHomeBtn = true;
-})
+});
 
 //event listener if user select yes button
 exitYesBtn.addEventListener('click', () => {
-    window.location.assign('index.html')
-})
+    window.location.assign('index.html');
+});
 
 //event listener if user select no button
 //additional if statement added depending which button user has clicked
@@ -362,7 +362,7 @@ exitNoBtn.addEventListener('click', () => {
     } else {
         $("#exit-modal").modal("hide");
     }   
-})
+});
 
 //highscores modal section
 
@@ -374,7 +374,7 @@ highScores.map(score => {
     <td>${score.score}</td>
     </tr>`;
 })
-.join('')
+.join('');
 
 //clear highscores modal section
 
@@ -382,19 +382,19 @@ highScores.map(score => {
 clearBtn.addEventListener('click', () => {
     $("#clear-modal").modal("show");
     $("#highscores-modal").modal("hide");
-})
+});
 
 //event listener once user selects yes to clear score
 clearYesBtn.addEventListener('click', () => {
     localStorage.removeItem('highScores');
     highScoresList.style.display = "none";
     $("#highscores-modal").modal("show");
-})
+});
 
 //event listener once user selects no to clear score
 clearNoBtn.addEventListener('click', () => {
     $("#highscores-modal").modal("show");
-})
+});
 
 //event listener to start the quiz game once clicked
 playButton.addEventListener('click', startQuiz);
