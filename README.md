@@ -212,18 +212,28 @@ __Run Project Locally__:
 
 ### Content
 
+The quiz questions used for this project were obtained from the following sources:
+
+* [kindadl](https://kidadl.com/articles/easy-movie-trivia-questions-and-answers-for-family-movie-night)
+* [parade](https://parade.com/977752/samuelmurrian/movie-trivia/)
+* [dailyrecord](https://www.dailyrecord.co.uk/lifestyle/100-movie-tv-quiz-questions-23212715)
+
 ### Media
 
-The images used for this project we obtained from the following sources:
+The images used for this project were obtained from the following sources:
+
+* Background Image - from [Freepik](https://img.freepik.com/free-photo/stylish-arrangement-popcorn-tickets_23-2147807342.jpg?size=626&ext=jpg)
+* Favicon Image - from [Flaticon](https://image.flaticon.com/icons/png/512/1038/1038100.png)
 
 ### Code
 
-* [Bootstrap v5.0.1](https://getbootstrap.com/) framework was used in this project to implement certain components for the website:
-    * [Navigation](https://getbootstrap.com/docs/5.0/components/navbar/): The navbar component was applied to create a a responsive navigation which changes with screen width. The basic structure was used from Bootstrap and I also added my own styling to modify this component to fit the website.
-    * [Scrollspy](https://getbootstrap.com/docs/5.0/components/scrollspy/): The scrollspy component was implemented to allow the relevant section to be highlighted once the users scrolls up or down the website. The basic structure was used from Bootstrap to create this, and I also added my own styling to modify this component to fit the website.
-    * [Carousel](https://getbootstrap.com/docs/5.0/components/carousel/): The carousel with captions component was implemented to create the 3 sliders at the top of the webpage which cycles through the images and provides the user with captions and buttons to select on each of these sliders. The basic structure was used from Bootstrap to create this, and I also added my own styling to modify this component to fit the website.
-    * [Featurette](https://getbootstrap.com/docs/5.0/examples/carousel/#): The featurette example was used as inspiration for the 'About Us' section of the website, and the Bootstrap classes applied to get a similar effect of the layout within this section.
-    * [Form](https://getbootstrap.com/docs/5.0/forms/overview/): The Bootstrap form classes were used to assist with the validation and basic style for button and input boxes. This was further styled using my own CSS stylesheet to fit the website. 
+* The script.js document was created using the following tutorial on [YouTube](https://www.youtube.com/watch?v=f4fB9Xg2JEY&amp;t=3763s&amp;ab_channel=BrianDesignBrianDesign). I have borrrowed code from this tutorial to assist with creating the quiz game. Please note some of the borrowed code has been customised by me to fit this project. I have also added my own code for additional functions for the project.
+
+* [Bootstrap v5.0.2](https://getbootstrap.com/) framework was used in this project to implement certain components for the website:
     * [Grid System](https://getbootstrap.com/docs/5.0/layout/grid/): The grid system was implemented for the overall responsiveness of the website.
+    * [Modal](https://getbootstrap.com/docs/5.0/components/modal/): The modal classes were used to create the different sections of this website.
+    * [Progress Bar](https://getbootstrap.com/docs/5.0/components/progress/#multiple-bars): The progress bar classes were used for the main quiz game section.
+    * [Buttons](https://getbootstrap.com/docs/5.0/components/buttons/): The button classes were used for general styling.
+    * [Form](https://getbootstrap.com/docs/5.0/forms/overview/): The form classes were used for general styling.
 
 ## Acknowledgements <a name="acknowledgements"></a>
