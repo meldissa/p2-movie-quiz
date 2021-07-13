@@ -1,6 +1,6 @@
 # Movie Quiz
 
-[View published site on GitHub Pages](https://github.com/meldissa/p2-movie-quiz/)
+[View published site on GitHub Pages](https://meldissa.github.io/p2-movie-quiz/)
 
 ## Project Overview
 
