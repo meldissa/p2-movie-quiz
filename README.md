@@ -120,7 +120,7 @@ Wireframes were created using [Balsamiq Wireframes](https://www.balsamiq.com/).
 
 The wireframes have examples of desktop, tablet, and mobile phone displays.
 
-* [Movie Quiz Wireframe]()
+* [Movie Quiz Wireframe](docs/images/movie-quiz-wireframe.png)
 
 ## Features <a name="features"></a>
 
