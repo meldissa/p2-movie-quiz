@@ -1,6 +1,10 @@
 # Movie Quiz
 
-[View published site on GitHub Pages](https://meldissa.github.io/p2-movie-quiz/)
+[View published site on GitHub Pages](https://meldissa.github.io/p2-movie-quiz/).
+
+![](docs/images/responsive-img.png)
+
+Image from [Am I Responsive](http://ami.responsivedesign.is/).
 
 ## Project Overview
 
