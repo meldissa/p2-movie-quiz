@@ -213,8 +213,6 @@ function renderQuestion() {
 
     //if function to check if the game has ended
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        localStorage.setItem('userScore', score);
-
         return $("#finish-quiz-modal").modal("show"); 
     }
 
@@ -274,15 +272,15 @@ answers.forEach(ans => {
 incrementScore = num => {
     score +=num;
     scoreText.innerText = score;
+
+    finalScore.innerText = score;
 };
 
 //end quiz modal section
 
-const userScore = localStorage.getItem('userScore');
+// const userScore = localStorage.getItem('userScore');
 const highScores = (JSON.parse(localStorage.getItem('highScores')) || []);
 const MAX_HIGH_SCORES = 10;
-
-finalScore.innerText = userScore;
 
 //event listener to allow user to click the save button once username entered
 username.addEventListener('keyup', () => {
@@ -294,7 +292,7 @@ saveHighScore = e => {
     e.preventDefault();
 
     const score = {
-        score: userScore,
+        score: finalScore.innerText,
         name: username.value
     }
 
@@ -386,7 +384,7 @@ clearBtn.addEventListener('click', () => {
 
 //event listener once user selects yes to clear score
 clearYesBtn.addEventListener('click', () => {
-    localStorage.removeItem('highScores');
+    localStorage.clear('highScores');
     highScoresList.style.display = "none";
     $("#highscores-modal").modal("show");
 });
