@@ -14,7 +14,7 @@ Movie Quiz is a website that aims to provide entertainment and a fun challenge t
         * [User Stories](#user-stories)
     * [Scope](#scope)
     * [Design](#design)
-        * [Colors](#colors)
+        * [Colours](#colours)
         * [Typography](#typography)
         * [Imagery](#imagery)
     * [Skeleton](#skeleton)
@@ -68,8 +68,8 @@ To achieve the strategy goals, I want to implement the following features:
 
 * A Home page section, which will allow users to start the quiz game, to view the rules of the game, and view the highscores table of previously saved scores (if any).
 * A Quiz Game section, which users can access once the game is started, the user is able to view the questions and available options which they can select to progress the quiz.
-* A feature which lets the user know is selected answer is correct or incorrect, correct will turn the answer green and incorrect will turn the answer red.
-* A score tracker during the quiz game, which allows the user to see their current score and this changes depending if the question answered is correct.
+* A feature which lets the user know if selected answer is correct or incorrect, correct will turn the answer green and incorrect will turn the answer red.
+* A score tracker during the quiz game, which allows the user to see their current score and this changes depending on if the question answered is correct.
 * A progress feature during the quiz game, which allows the user to see how many questions have been answered out of the total questions and a progress bar for additional visual aspect.
 * An End Quiz section, which notifies the user that the quiz game is finished and displays the final score, the user has also an option to save the score and return to the home page, or replay quiz or return back to the home page without saving the score.
 * A Highscores section, which displays previously recorded scores to the user (top 10) noting the username and the score next to it, also allowing user to clear the table of all previously recorded scores.
@@ -77,7 +77,7 @@ To achieve the strategy goals, I want to implement the following features:
 
 ## Design <a name="design"></a>
 
-### Colours <a name="colors"></a>
+### Colours <a name="colours"></a>
 
 The following colours have been used for the website:
 
@@ -162,7 +162,7 @@ For this project the main languages used are __HTML5__, __CSS3__ and __JavaScrip
 I have also utilised the following frameworks, libraries, and tools:
 
 * [Bootstrap v5.0.2](https://getbootstrap.com/): 
-    * Bootstrap has been used for overall responsiveness of the website, and for the layout to include navigation, carousel, featurette, and forms within the relevant sections of the website.
+    * Bootstrap has been used for overall responsiveness of the website and for the layout with the addition of select classes.
 * [jQuery](https://jquery.com/):
     * jQuery was used for additional function to display the modal sections in this project.
 * [GitPod](https://www.gitpod.io/): 
@@ -262,3 +262,7 @@ The images used for this project were obtained from the following sources:
     * [Form](https://getbootstrap.com/docs/5.0/forms/overview/): The form classes were used for general styling.
 
 ## Acknowledgements <a name="acknowledgements"></a>
+
+* I would like to thank my family and friends for their support throughout this project and for assisting with the testing stage and providing valuable feedback.
+* The Tutor Support team, especially Scott, who greatly assisted me on an issue with my final score display on the javascript file.
+* My mentor, Guido Cecilio, for being of great support and providing valuable guidance and feedback throughout this process.
