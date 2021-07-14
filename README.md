@@ -102,7 +102,7 @@ In the event the font fails to load, I have used sans-serif as a back-up font.
 
 ### Imagery <a name="imagery"></a>
 
-Images are obtained from the [Freepik](https://www.freepik.com/) website.
+Images are obtained from the [Freepik](https://www.freepik.com/) and [Flaticon](https://image.flaticon.com/icons/png/512/1038/1038100.png) website.
 
 I have used imagery appropriate to the website’s content to provide a more visual experience to the user.
 
@@ -122,11 +122,31 @@ The wireframes have examples of desktop, tablet, and mobile phone displays.
 
 ### Current Features <a name="current-features"></a>
 
-For this project I opted for a single page website, this is fully responsive and consists of a home section, quiz game section and the following modal sections: rules, highscores, finish quiz, clear scores, play again and return home.
+For this project I opted for a single page website with "shown" and "hidden' features activated depending on user input. This is fully responsive and consists of a Home section, Quiz Game section and the following modal sections: Rules, Highscores, Finish Quiz, Clear Scores, Play Again and Return Home.
 
 __Home__: 
 
-The Home section consists of content which provides the user an introduction of why posture matters, then proceeds to list the benefits of good posture and common posture mistakes. For the latter two sections I have used the Font Awesome icons and applied CSS style to add color to display the benefits in green and mistakes in red. This provides the user with further visual guidance on what these sections represent. I have kept the content simple and minimal, so this does not overwhelm the user with too much information.
+The home section consists of the main heading for the Movie Quiz game and a paragraph text section underneath to entice the user to play the quiz game. The user is provided with the option to start the quiz game, view the rules, and view the highscores table. Upon clicking the "Play" button, the user would be able to begin the quiz game. Clicking the "Rules" button displays a modal popup which allows the user to view and familiarise themselves with the quiz game. Clicking the "Highscores" button will display the table with the top 10 recorded highscores (this will be empty the first time visits the website as no scores would be saved yet).
+
+__Quiz Game__:
+
+Once the user initiates the game by clicking "Play" from the Home page section, they will be presented with the main quiz game section. The user is presented with a quiz question (this is random) and below are provided with 4 answer buttons of the possible answers. Once the user selects the desired answer button, it will turn either green if correct or red if incorrect to indicate whether this was answered correctly or not. Upon answering a question, the user will be shown the next set of questions until all the questions have been answered, and then the quiz game will end. Above the question, the user can view the progress bar which shows the current question out of the total and a visual progress bar to show how far along the quiz they are. In addition, the user is able to see their score which will update with every correct answer selected. The user is also given the option to quit the quiz game anytime by clicking the "Quit Game" button. Prior to exiting the game, they will be presented with a prompt modal to confirm their choice. 
+
+__Finish Quiz Modal__:
+
+The Finish Quiz modal is displayed once the game has ended (after the user has answered all 20 questions). The modal displays the final total score the user has earned during the quiz game, and provides the option to enter a username to save the score earned during the game. If the user chooses to save the score, this can then be accessed on the highscores table from the home page section. The user is also given the option to replay the quiz game, by clicking this button an additional prompt modal will be provided for the user to confirm their choice as the score will not be saved choosing this option. The user can also choose to return to the home section, and a prompt modal is also provided for this choice for the user to confirm as the score will not be recorded.
+
+__Rules Modal__:
+
+The Rules modal is accessed from the home page once the user clicks the "Rules" button. The purpose of this modal is to provide the user with the rules of the quiz game and explain the basic navigation of the website. The user can exit this modal by clicking "Close" which will return them to the home page.
+
+__Highscores Modal__:
+
+The Highscores modal is accessed from the home page once the user click the "Highscores" button. The purpose of this modal is to display the top 10 earned scores during the quiz game which have been saved. Upon first visit, this table will be empty as no scores have been saved yet, however once the user saved scores the table will display this in order of highest to lowest. If more than 10 scores are recorded then the lowest scoring will be replaced, if the new score earned is higher than the existing lowest on the table. The user can exit the modal by clicking "Close" which will return them back to the home page. The scores will remain recorded on the table if the user returns back to the website. The user has also got the option to clear the highscores earned by clicking the "Clear Scores" button, a prompt modal will be display for the user to confirm their choice. By selecting "Yes" the highscores table will be fully cleared from any previously recorded scores.
+
+__Confirmation Modals__:
+
+The Clear Scores, Play Again and Return Home modals act as a confirmation for the user choice which will have a direct consequence, and this acts as an additional barrier for user to confirm their choice and a warning of the consequence if the action taken. With the additional of the modals, I kept in mind the UX of the website, as sometimes the user can accidentally select a button, so with the addition of these modal this will stop any unwanted button pressing reducing the users experience. as the direct action will not be carried out without further user confirmation. For example, clearing the highscores table when the user does not want to do so.
 
 ### Future Features <a name="future-features"></a>
 
