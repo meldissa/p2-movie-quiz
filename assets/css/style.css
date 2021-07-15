@@ -24,6 +24,7 @@ body {
     height: 100vh;
     background: url("../images/bg-image-1.jpeg") center center no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 .btn {
