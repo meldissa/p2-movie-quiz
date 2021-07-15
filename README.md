@@ -193,8 +193,6 @@ I have also utilised the following frameworks, libraries, and tools:
     * The JSHint Validation Service was used to validate the JavaScript document for this project and to identify any issues with the code.
 * [Color Contrast Accessibility Validator](https://color.a11y.com/):
     * This was used to test the color contrast accessibility for this project.
-* [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/):
-    * WAVE was used to test the accessibility for this project.
 * [Am I Responsive](http://ami.responsivedesign.is/):
     * Am I Responsive was used to create the header image for the README file.
 
@@ -203,6 +201,54 @@ I have also utilised the following frameworks, libraries, and tools:
 ### User Stories Testing <a name="user-testing"></a>
 
 ### Validation Testing <a name="validation-testing"></a>
+
+To test the HTML code, I used the __W3C Markup Validation Service__:
+
+![](docs/images/html-testing.png)
+
+No errors were detected in the code. There is 1 warning displayed for the h4 tag missing text, however this has been left empty as the text has been added via JavaScript to populate the empty space.
+
+To test the CSS code, I used the __W3C CSS Validation Service__:
+
+![](docs/images/css-testing.png)
+
+No errors were detected in the code.
+
+To test the JavaScript code, I used the __JSHint Validation Service__:
+
+![](docs/images/js-testing.png)
+
+No errors were detected in the code. Warnings were detected in the code, however this was due to the use of the new ES6 syntax in the code.
+
+I also used the __Chrome Dev Tools Lighthouse Report__ to test both on desktop and mobile.
+
+For the desktop, no issues were detected, all sections were above 90:
+
+![](docs/images/lighthouse-desktop-report.png)
+
+For the mobile, no issues were detected, all sections were above 90:
+
+![](docs/images/lighthouse-mobile-report.png)
+
+I also tested the website colour contrast using the __Color Contrast Accessibility Validatory__:
+
+![](docs/images/colour-contrast-test.png)
+
+No issues were detected.
+
+This website was tested on the following browsers:
+
+* Google Chrome
+* Safari
+* Mozilla Firefox
+
+This website was also tested on the following devices:
+
+* iPhone 11 Pro
+* iPhone X
+* iPad Pro
+* MacBook Air
+* Android One Plus 8 Pro
 
 ## Deployment <a name="deployment"></a>
 
