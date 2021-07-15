@@ -30,6 +30,7 @@ Movie Quiz is a website that aims to provide entertainment and a fun challenge t
 4. [Testing](#testing)
     * [User Stories Testing](#user-testing)
     * [Validation Testing](#validation-testing)
+    * [Known Issues and Resolutions](#issues)
 5. [Deployment](#deployment)
 6. [Credits](#credits)
 7. [Acknowledgements](#acknowledgements)
@@ -249,6 +250,14 @@ This website was also tested on the following devices:
 * iPad Pro
 * MacBook Air
 * Android One Plus 8 Pro
+
+### Known Issues and Resolutions <a name="issues"></a>
+
+* During testing an issue was identified within the Finish Quiz modal, where the final score was not being displayed correctly. The score displayed was showing the previous game score rather than the current game score that the user has obtained. After further investigation, it was idenitfied that the issue was within the script.js file, once the game had ended the score was set to the local storage and the modal was returned. The finalScore variable was then set to get the score from the local storage, however, this was pulling the incorrect score. To resolve this issue, the finalScore variable was placed within the function that increments the score during the quiz and was set to return that score. I removed the code which set and retrieved the score to and from the local storage. After testing this once more the issue was now resolved, and once the user reaches the end of the quiz game the final score is now displayed correctly for the total score that the user has earned during the current game.
+
+* During testing an issue was identified within the main Quiz Game section. In the script.js file, any correct or incorrect answers selected by the user would have the relevant style class applied to change the colour, green if correct or red if incorrect. However, once the answer was selected, the answer button did not change to the relevant colour, instead the surrounding area in between the buttons would have the style class applied to change the colour. After further inspection, it was identified that the style class is being applied to the parent element of the answer button variable which is the div containing all the answer buttons. Hence, why the colour change was displaying incorrectly as the style class was applied to the div rather than the answer buttons. To resolve this issue, I changed the code in the script.js to ensure the style class is applied to the answers buttons. Further testing was completed, and the answer buttons now correctly have the style applied to change the colour depending if the correct or incorrect answer is selected by the user.
+
+* An additional issue was identified within the main Quiz Game section. The answer buttons have a hover style applied, when the user hovers over the available answers this will change the colour. However, once the user selects the answer and the new class style is applied for correct or incorrect answer, the hover style is still in effect. Therefore, if the user is still hovering over the answer button they will not be able to see whether the answer was correct or incorrect, unless the pointer is moved away from the answer button. This affected the UX of the quiz game. To resolve the issue, I added additional style classes to separate the answer buttons from the other buttons on the website. Then I added additional code in the script.js, when the user selects the answer the hover style would be removed from the button and the correct/incorrect style class applied. Now, when the user selects the answer button, the hover style is removed and they are able to view whether the answer is correct or incorrect. This is then reset again once the user is presented with a new question, so the hover style works once more until the user selects the next answer.
 
 ## Deployment <a name="deployment"></a>
 
