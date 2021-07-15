@@ -24,7 +24,6 @@ body {
     height: 100vh;
     background: url("../images/bg-image-1.jpeg") center center no-repeat;
     background-size: cover;
-    overflow: hidden;
 }
 
 .btn {
@@ -57,7 +56,6 @@ body {
     max-width: 80%;
     padding: 25px;
     border: 1px solid #fff;
-    margin: auto 0;
 }
 
 .home-container {
@@ -123,7 +121,6 @@ body {
     max-width: 80%;
     padding: 50px 25px 50px 25px;
     border: 1px solid #fff;
-    margin: auto 0;
 }
 
 #progress-bar {
