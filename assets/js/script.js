@@ -9,8 +9,7 @@ Please note some of the borrowed code has been customised by me to fit this proj
 I have also added my own code for additional functions for the project. */
 
 // Array with list of quiz questions
-const questions = [
-    {
+const questions = [{
         question: "What was the name of the first film in the 'Harry Potter' series?",
         ans1: "Harry Potter and the Order of the Phoenix",
         ans2: "Harry Potter and the Prisoner of Azkaban",
@@ -212,9 +211,12 @@ const MAX_QUESTIONS = 20;
 function renderQuestion() {
 
     //if function to check if the game has ended
-    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        $("#finish-quiz-modal").modal({backdrop: 'static', keyboard: false});  
-        return $("#finish-quiz-modal").modal("show"); 
+    if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+        $("#finish-quiz-modal").modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+        return $("#finish-quiz-modal").modal("show");
     }
 
     //questions counter increases which updates the progress bar and text
@@ -241,7 +243,7 @@ function renderQuestion() {
 //function to check which answer the user has chose
 answers.forEach(ans => {
     ans.addEventListener('click', e => {
-        if(!acceptingAnswers) return;
+        if (!acceptingAnswers) return;
 
         acceptingAnswers = false;
         const selectedChoice = e.target;
@@ -251,7 +253,7 @@ answers.forEach(ans => {
         let classToApply = selectedAnswer == currentQuestion.correct ? 'btn-correct' : 'btn-incorrect';
 
         //if correct answer chosen then increase score
-        if(classToApply === 'btn-correct') {
+        if (classToApply === 'btn-correct') {
             incrementScore(SCORE_POINTS);
         }
 
@@ -271,7 +273,7 @@ answers.forEach(ans => {
 
 //function to update the user score
 incrementScore = num => {
-    score +=num;
+    score += num;
     scoreText.innerText = score;
 
     finalScore.innerText = score;
@@ -299,7 +301,7 @@ saveHighScore = e => {
 
     highScores.push(score);
 
-    highScores.sort((a,b) => {
+    highScores.sort((a, b) => {
         return b.score - a.score;
     });
 
@@ -313,21 +315,24 @@ saveHighScore = e => {
 
 //event listener when user clicks the pay again button
 playAgainBtn.addEventListener('click', () => {
-    $("#play-again-modal").modal({backdrop: 'static', keyboard: false}); 
+    $("#play-again-modal").modal({
+        backdrop: 'static',
+        keyboard: false
+    });
     $("#play-again-modal").modal("show");
-    $("#finish-quiz-modal").modal("hide"); 
+    $("#finish-quiz-modal").modal("hide");
 });
 
 //event listener if user select yes button
 restartYesBtn.addEventListener('click', () => {
-    $("#finish-quiz-modal").modal("hide"); 
+    $("#finish-quiz-modal").modal("hide");
     scoreText.innerText = 0;
     startQuiz();
 });
 
 //event listener if user select no button
 restartNoBtn.addEventListener('click', () => {
-    $("#finish-quiz-modal").modal("show"); 
+    $("#finish-quiz-modal").modal("show");
 });
 
 
@@ -339,13 +344,19 @@ let clickreturnHomeBtn;
 
 //event listener when user clicks the quit game button
 exitGameButton.addEventListener('click', () => {
-    $("#exit-modal").modal({backdrop: 'static', keyboard: false});
+    $("#exit-modal").modal({
+        backdrop: 'static',
+        keyboard: false
+    });
     $("#exit-modal").modal("show");
 });
 
 //event listener when user clicks the return home button
 returnHomeBtn.addEventListener('click', () => {
-    $("#exit-modal").modal({backdrop: 'static', keyboard: false});
+    $("#exit-modal").modal({
+        backdrop: 'static',
+        keyboard: false
+    });
     $("#exit-modal").modal("show");
     $("#finish-quiz-modal").modal("hide");
     clickreturnHomeBtn = true;
@@ -359,30 +370,32 @@ exitYesBtn.addEventListener('click', () => {
 //event listener if user select no button
 //additional if statement added depending which button user has clicked
 exitNoBtn.addEventListener('click', () => {
-    if(clickreturnHomeBtn === true) {
+    if (clickreturnHomeBtn === true) {
         $("#finish-quiz-modal").modal("show");
     } else {
         $("#exit-modal").modal("hide");
-    }   
+    }
 });
 
 //highscores modal section
 
 //highscores added to the table if user saves the score
-highScoresList.innerHTML = 
-highScores.map(score => {
-    return `<tr>
+highScoresList.innerHTML = highScores.map(score => {
+        return `<tr>
     <td>${score.name}</td>
     <td>${score.score}</td>
     </tr>`;
-})
-.join('');
+    })
+    .join('');
 
 //clear highscores modal section
 
 //event listener once user selects clear score button
 clearBtn.addEventListener('click', () => {
-    $("#clear-modal").modal({backdrop: 'static', keyboard: false});
+    $("#clear-modal").modal({
+        backdrop: 'static',
+        keyboard: false
+    });
     $("#clear-modal").modal("show");
     $("#highscores-modal").modal("hide");
 });
