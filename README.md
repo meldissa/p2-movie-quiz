@@ -247,13 +247,15 @@ The top right section shows the user their score during the quiz game. The score
 
 ![](docs/images/score-testing.png)
 
-In the top mid section the user is presented with the question, and below that they are presented with 4 answer buttons. On desktop, the user can hover over the answer buttons which will change the colour to indicate that the user can select this answer. On mobile, this feature was disabled to improve the overall UX (this is further discussed in the __Known Issues and Resolutions__ section). Once the user clicks on an answer button, this will turn green if the answer selected is correct, or this will turn red if the answer selected is incorrect. There is a short timeout added before the user is then presented with the next question, and then the same process will apply where the user is presented with a question and they will select one of the 4 answers. 
+In the top mid section the user is presented with the question, and below that they are presented with 4 answer buttons. On desktop, the user can hover over the answer buttons which will change the colour to indicate that the user can select this answer. On mobile, this feature was disabled to improve the overall UX (this is further discussed in the __Known Issues and Resolutions__ section). Once the user clicks on an answer button, this will turn green if the answer selected is correct, or this will turn red if the answer selected is incorrect. There is a short timeout added before the user is then presented with the next question, and then the same process will apply.
 
 ![](docs/images/quiz-game-testing-2.png)
 
 At the bottom of the quiz game section, there is a 'Quit Game' button, the user has the option to end the quiz game early without finishing it. By clicking the 'Quit Game' button, the user will be presented with a popup modal to confirm their choice, selecting 'No' will return them back to the quiz game and no progress would be lost, selecting 'Yes' will return the user back to the Home page and all progress will be lost.
 
 ![](docs/images/quit-game-testing.png)
+
+![](docs/images/quit-game-testing-2.png)
 
 The following user stories have been achieved:
 
@@ -262,6 +264,25 @@ The following user stories have been achieved:
 * I want to have the option to quit the quiz game without finishing it.
 * I want to provide a challenging quiz to entertain online users.
 
+After the user has answered all 20 questions, the quiz game will end and the user will be displayed with the finish quiz game modal. The user will be notified that they have reached the end of the quiz game. The user will be presented with the final total score that they have accumulated during the quiz game out of the max total achievable points. The user is then prompted to enter their name to be able to save the score earned during this game. If the user has not entered a name, then the 'Save Score' button is disabled and does not allow the user to save the score.
+
+![](docs/images/final-testing.png)
+
+Once the user has entered a name in the input field, then the 'Save Score' button becomes available and the user is able to click this. By clicking the 'Save Score' button, the final score will be saved and the user will be taken back to the Home page. If the user now clicks on the "Highscores' button, the table will display their score along with the name entered. If the table already has 10 max recorded top scores, then the user's new score will only be visible if they have scored higher than the previusly recorded scores, then this will be replaced accordingly. 
+
+![](docs/images/final-testing-2.png)
+
+![](docs/images/highscores-testing-3.png)
+
+From the finish quiz modal, the user also has the option to replay the quiz via the 'Play Again' button. By clicking 'Play Again', the user will be presented with the modal popup to confirm their choice. Selecting 'No' will return the user back to the finish quiz modal, selected 'Yes' will start the quiz game again and all unsaved progress will be lost.
+
+![](docs/images/final-testing-3.png)
+
+From the finish quiz modal, the user also has the option to return to the home page without saving the quiz via the 'Return Home' button. By clicking 'Return Home', the user will be presented with the modal popup to confirm their choice. Selecting 'No' will return the user back to the finish quiz modal, selected 'Yes' will take the user back to the Home page and all unsaved progress will be lost.
+
+![](docs/images/final-testing-4.png)
+
+The following user stories have been achieved:
 
 * I want to view my final score after quiz game has ended and to save this.
 * I want to replay the quiz game.
