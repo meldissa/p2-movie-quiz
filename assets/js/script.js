@@ -213,6 +213,7 @@ function renderQuestion() {
 
     //if function to check if the game has ended
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+        $("#finish-quiz-modal").modal({backdrop: 'static', keyboard: false});  
         return $("#finish-quiz-modal").modal("show"); 
     }
 
@@ -312,6 +313,7 @@ saveHighScore = e => {
 
 //event listener when user clicks the pay again button
 playAgainBtn.addEventListener('click', () => {
+    $("#play-again-modal").modal({backdrop: 'static', keyboard: false}); 
     $("#play-again-modal").modal("show");
     $("#finish-quiz-modal").modal("hide"); 
 });
@@ -337,11 +339,13 @@ let clickreturnHomeBtn;
 
 //event listener when user clicks the quit game button
 exitGameButton.addEventListener('click', () => {
+    $("#exit-modal").modal({backdrop: 'static', keyboard: false});
     $("#exit-modal").modal("show");
 });
 
 //event listener when user clicks the return home button
 returnHomeBtn.addEventListener('click', () => {
+    $("#exit-modal").modal({backdrop: 'static', keyboard: false});
     $("#exit-modal").modal("show");
     $("#finish-quiz-modal").modal("hide");
     clickreturnHomeBtn = true;
@@ -378,6 +382,7 @@ highScores.map(score => {
 
 //event listener once user selects clear score button
 clearBtn.addEventListener('click', () => {
+    $("#clear-modal").modal({backdrop: 'static', keyboard: false});
     $("#clear-modal").modal("show");
     $("#highscores-modal").modal("hide");
 });
