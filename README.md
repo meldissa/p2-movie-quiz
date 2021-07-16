@@ -261,6 +261,8 @@ This website was also tested on the following devices:
 
 * During testing for the mobile devices a UX issue was identified, where the hover style is in effect. Once the user clicks the button on a mobile device to select their answer during the quiz game, the answer will have the correct class applied to change colour. However, once the next questions is presented the hover style is applied to the button the user selected last. To resolve this issue, I added a media query for hover: none to the style.css. Therefore, when the user selects the answer buttons on mobile devices the hover effect won't be in place to distract from the answer buttons selected once the next questions starts. The answer buttons are now displayed all in the same colour and will change only upon the user selecting the correct or incorrect answer.
 
+* My family and friends assisted with further testing of the website. Feedback was received regarding the UX of the website where at the end of the quiz the final total score is displayed. Feedback provided suggested to add the final score user has earned out of the overall max total that is possible to achieve in the quiz, so the user is able to see how well they have played during the quiz game. To improve the UX as per the suggested feedback, I added additional text to the h3 tag in the index.html where the final score is displayed to say '(user score) out of 200'. The final user score placeholder text was wrapped in a span tag, to ensure the user score is updated within the span and the outside text is unaffected as this does not change.
+
 ## Deployment <a name="deployment"></a>
 
 The project was developed using GitPod and was deployed via the GitHub repository to GitHub Pages.
