@@ -157,7 +157,8 @@ The Clear Scores, Play Again and Return Home modals act as a confirmation for th
 
 Due to time constraints, I was unable to apply additional features, in the future I would like to implement the following:
 
-* Add more categories to the quiz to allow the user to shuffle between different categories and questions to test their knowledge on wider range of topics. For example, make specific categories for the movies such as animated, action, horror etc.
+* Add more questions to the quiz. At the moment the quiz has a max of 20 questions available within the array and the quiz game itself uses all 20 of these questions. I would like to increase the number of questions available to use during the quiz game. For example, increase available questions to 100 and during the quiz game 20 of these questions are randomly selected. This will provide more incentive to the user to return and replay the quiz, and would provide a higher entertainment value as the user is able to play the game with set of new questions to keep it fresh and more interesting.
+* Add additional visual feedback when the user selects the correct or incorrect answer. For example, a popup that will say 'correct' or 'wrong', this way the user will have additional feedback to say whether the answer was correct, as sometimes the user might be a bit slower to react or realise based on the current colour changes for the answer buttons whether their chosen answer was right or wrong. In addition, by including this visual feedback this can also help cut down the rules section to keep it much shorter and simpler, as this would be more self explanatory with the popup element.
 * Add a timer element to the quiz to give the user a set timeframe to answer the question displayed.
 
 ## Technologies Used <a name="tech-used"></a>
@@ -200,6 +201,72 @@ I have also utilised the following frameworks, libraries, and tools:
 ## Testing <a name="testing"></a>
 
 ### User Stories Testing <a name="user-testing"></a>
+
+From the Home page, the user is presented with the title 'Movie Quiz' and an introductory short paragraph to catch their attention and incentivise playing the quiz game. The user is able to select 'Play' to start the quiz game, 'Rules' to view the rules modal which explains the game, and 'Highscores' to view the modal popup for the highscores table.
+
+![](docs/images/home-testing.png)
+
+When the user clicks the 'Play' button, they will be taken to the next screen where the quiz game has been initiated.
+
+![](docs/images/quiz-testing.png)
+
+When the user clicks the 'Rules' button, a modal popup will appear on the screen and the user will be able to read the quiz rules. To return back to the Home page, the user can either click 'Close' or click off the modal to close this down.
+
+![](docs/images/rules-testing.png)
+
+When the user clicks the 'Highscores' button, a modal popup will appear on the screen and the user will be able to view the table with the 'Name' and 'Score' of previously saved scores. This table will be empty upon first visit as no user scores have been saved yet. To return back to the Home page, the user can either click 'Close' or click off the modal to close this down.
+
+![](docs/images/highscores-testing.png)
+
+If the user has already played the quiz game and saved the final score, then this will be recorded in the highscores table. The table displays the top 10 scores, any new scores higher than the lowest top 10 score on the table will be added and the lowest score will be replaced. 
+
+![](docs/images/highscores-testing-2.png)
+
+The user is also able to clear the scores table by selecting the 'Clear Scores' button. This removes all the recorded scores on the highscores table and the table will be reset and empty. Once the users clicks the 'Clear Scores' button, they will be provided with a prompt to confirm their choice. By clicking 'No' this will return the user back to the highscores table and no changes would have been made. By clicking 'Yes' the highscores table will be cleared and the user will be taken back to the now empty table. 
+
+![](docs/images/clear-scores-testing.png)
+
+The following user stories have been achieved:
+
+* I want to want to play an online quiz to test my knowledge on movies.
+* I want to easily locate the rules of the game and understand how to play the quiz game.
+* I want to view the highscores table of previously saved scores.
+* I want to clear the highscores to reset the table.
+* I want users to record highscores to give incentive to return to replay the game to improve the score.
+* I want users to easily navigate through the site and game without encountering much difficulty.
+
+Once the user has initiated the quiz game by clickig the 'Play' button from the Home page, they will be presented with the quiz game section.
+
+![](docs/images/quiz-game-testing.png)
+
+The top left section shows the user their progress during the quiz. This is presented both visually via the progress bar which fills up as the user answers more questions, and is also presented in written format above the progress bar showing the user which questions of the max 20 they are currently on.
+
+![](docs/images/progress-testing.png)
+
+The top right section shows the user their score during the quiz game. The score begins with 0, and increases by 10 each time the user answers the question correctly. Any incorrect answers earn 0 points and therefore the score would not change in this instance. The user is able to track their total score during the game, as the score will automaticaly update once the user selects the correct answer.
+
+![](docs/images/score-testing.png)
+
+In the top mid section the user is presented with the question, and below that they are presented with 4 answer buttons. On desktop, the user can hover over the answer buttons which will change the colour to indicate that the user can select this answer. On mobile, this feature was disabled to improve the overall UX (this is further discussed in the __Known Issues and Resolutions__ section). Once the user clicks on an answer button, this will turn green if the answer selected is correct, or this will turn red if the answer selected is incorrect. There is a short timeout added before the user is then presented with the next question, and then the same process will apply where the user is presented with a question and they will select one of the 4 answers. 
+
+![](docs/images/quiz-game-testing-2.png)
+
+At the bottom of the quiz game section, there is a 'Quit Game' button, the user has the option to end the quiz game early without finishing it. By clicking the 'Quit Game' button, the user will be presented with a popup modal to confirm their choice, selecting 'No' will return them back to the quiz game and no progress would be lost, selecting 'Yes' will return the user back to the Home page and all progress will be lost.
+
+![](docs/images/quit-game-testing.png)
+
+The following user stories have been achieved:
+
+* I want to see my progress whilst playing the quiz game.
+* I want to track my score during the quiz game of how many points I have.
+* I want to have the option to quit the quiz game without finishing it.
+* I want to provide a challenging quiz to entertain online users.
+
+
+* I want to view my final score after quiz game has ended and to save this.
+* I want to replay the quiz game.
+* I want users to return and replay the quiz.
+* I want users to record highscores to give incentive to return to replay the game to improve the score.
 
 ### Validation Testing <a name="validation-testing"></a>
 
