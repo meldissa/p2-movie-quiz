@@ -151,7 +151,7 @@ The Highscores modal is accessed from the home page once the user clicks the "Hi
 
 __Confirmation Modals__:
 
-The Clear Scores, Play Again and Return Home modals act as a confirmation for the user choice which will have a direct consequence, and this acts as an additional barrier for user to confirm their choice and a warning of the consequence if the action taken. With the additional of the modals, I kept in mind the UX of the website, as sometimes the user can accidentally select a button, so with the addition of these modal this will stop any unwanted button pressing reducing the user's experience. as the direct action will not be carried out without further user confirmation. For example, clearing the highscores table when the user does not want to do so.
+The Clear Scores, Play Again and Return Home modals act as a confirmation for the user choice which will have a direct consequence, and this acts as an additional barrier for user to confirm their choice and a warning of the consequence if the action is taken. With the additional of the modals, I kept in mind the UX of the website, as sometimes the user can accidentally select a button, so with the addition of these modals this will stop any unwanted button pressing reducing the user's experience. The direct action will not be carried out without further user confirmation. For example, clearing the highscores table when the user does not want to do so.
 
 ### Future Features <a name="future-features"></a>
 
@@ -162,6 +162,8 @@ Due to time constraints, I was unable to apply additional features, in the futur
 * Add additional visual feedback when the user selects the correct or incorrect answer. For example, a popup that will say 'correct' or 'wrong', this way the user will have additional feedback to say whether the answer was correct, as sometimes the user might be a bit slower to react or realise based on the current colour changes for the answer buttons whether their chosen answer was right or wrong. In addition, by including this visual feedback this can also help cut down the rules section to keep it much shorter and simpler, as this would be more self-explanatory with the popup element.
 
 * Add a timer element to the quiz to give the user a set timeframe to answer the question displayed.
+
+* Randomise the answer buttons. Currently the correct and incorrect answers always go in the same order for each question, I would like to implement a feature where the correct answer does not always appear in the same order. This will reduce any motive for user memorising the order of the answers and would make the quiz game more entertaining.
 
 ## Technologies Used <a name="tech-used"></a>
 
