@@ -2,7 +2,7 @@
 
 https://www.youtube.com/watch?v=f4fB9Xg2JEY&amp;t=3763s&amp;ab_channel=BrianDesignBrianDesign
 
-I have borrrowed code from this tutorial to assist with creating the quiz game.
+I have borrowed code from this tutorial to assist with creating the quiz game.
 
 Please note some of the borrowed code has been customised by me to fit this project.
 
